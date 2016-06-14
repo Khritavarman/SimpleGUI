@@ -21,8 +21,11 @@ public class WindowA extends JFrame {
         formA.getButtonAtoB().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                setVisible(false);
-                new WindowB();
+                dispose();
+                String fio = formA.getSurname().getText() +  " " +
+                        formA.getName().getText() + " " +
+                        formA.getSecondName().getText();
+                new WindowB().getFormB().getFio().setText(fio);
             }
         });
     }
