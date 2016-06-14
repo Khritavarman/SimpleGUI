@@ -34,4 +34,15 @@ public class WindowB extends JFrame {
     public FormB getFormB() {
         return formB;
     }
+
+    public static void convertToA (FormA formA, FormB formB) {
+        String[] text = formB.getFio().getText().trim().split("[\\s]+");
+        try {
+            formA.getSurname().setText(text[0]);
+            formA.getName().setText(text[1]);
+            formA.getSecondName().setText(text[2]);
+        } catch (ArrayIndexOutOfBoundsException e1) {
+            e1.printStackTrace();
+        }
+    }
 }
