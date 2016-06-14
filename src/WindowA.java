@@ -7,14 +7,13 @@ import java.awt.event.MouseEvent;
  */
 public class WindowA extends JFrame {
 
-    FormA formA = null;
+    FormA formA = new FormA();
 
     public WindowA() {
         super("Window A");
         setSize(800,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        formA = new FormA();
         setContentPane(formA.getRootPanel());
         setVisible(true);
 
@@ -28,5 +27,9 @@ public class WindowA extends JFrame {
                 new WindowB().getFormB().getFio().setText(fio);
             }
         });
+    }
+
+    public FormA getFormA() {
+        return formA;
     }
 }

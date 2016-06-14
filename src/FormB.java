@@ -4,16 +4,16 @@ import javax.swing.*;
  * Created by Kostyan on 14.06.2016.
  */
 public class FormB {
-    private JTextField textField1;
-    private JButton button1;
+    private JTextField fio;
+    private JButton buttonBtoA;
     private JPanel rootPanel;
 
-    public JTextField getTextField1() {
-        return textField1;
+    public JTextField getFio() {
+        return fio;
     }
 
-    public JButton getButton1() {
-        return button1;
+    public JButton getButtonBtoA() {
+        return buttonBtoA;
     }
 
     public JPanel getRootPanel() {

@@ -6,9 +6,11 @@ import java.awt.event.MouseEvent;
  * Created by Kostyan on 14.06.2016.
  */
 public class FormA {
-    private JTextField textField1;
+    private JTextField surname;
     private JPanel rootPanel;
     private JButton buttonAtoB;
+    private JTextField name;
+    private JTextField secondName;
 
     public FormA() {
         buttonAtoB.addMouseListener(new MouseAdapter() {
@@ -19,8 +21,8 @@ public class FormA {
         });
     }
 
-    public JTextField getTextField1() {
-        return textField1;
+    public JTextField getSurname() {
+        return surname;
     }
 
     public JPanel getRootPanel() {
@@ -29,5 +31,13 @@ public class FormA {
 
     public JButton getButtonAtoB() {
         return buttonAtoB;
+    }
+
+    public JTextField getName() {
+        return name;
+    }
+
+    public JTextField getSecondName() {
+        return secondName;
     }
 }
