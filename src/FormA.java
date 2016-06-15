@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by Kostyan on 14.06.2016.
@@ -8,6 +6,9 @@ import java.awt.event.MouseEvent;
 public class FormA {
     private JTextField surname;
     private JPanel rootPanel;
+    private JPanel labelPanel;
+    private JPanel textFieldPanel;
+    private JPanel buttonPanel;
     private JButton buttonAtoB;
     private JTextField name;
     private JTextField secondName;
@@ -30,5 +31,9 @@ public class FormA {
 
     public JTextField getSecondName() {
         return secondName;
+    }
+
+    public JPanel getLabelPanel() {
+        return labelPanel;
     }
 }

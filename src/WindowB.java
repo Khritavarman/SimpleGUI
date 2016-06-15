@@ -11,7 +11,7 @@ public class WindowB extends JFrame {
 
     public WindowB() {
         super("Window B");
-        setSize(800,600);
+        setSize(400,200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setContentPane(formB.getRootPanel());

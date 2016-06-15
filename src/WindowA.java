@@ -11,7 +11,7 @@ public class WindowA extends JFrame {
 
     public WindowA() {
         super("Window A");
-        setSize(800,600);
+        setSize(400,200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setContentPane(formA.getRootPanel());
@@ -21,6 +21,7 @@ public class WindowA extends JFrame {
             public void mousePressed(MouseEvent e) {
                 switchToB(formA);
             }
+
         });
     }
 
@@ -45,7 +46,9 @@ public class WindowA extends JFrame {
                         formA.getName().getText() + " " +
                         formA.getSecondName().getText();
                 WindowB windowB = new WindowB();
-                windowB.getFormB().getFio().setText(fio);
+                FormB formB = windowB.getFormB();
+                formB.getFio().setText(fio);
+                formB.getProgressBar1().setValue(fio.length());
                 windowB.setVisible(true);
                 this.dispose();
             }
@@ -54,7 +57,9 @@ public class WindowA extends JFrame {
                     formA.getName().getText() + " " +
                     formA.getSecondName().getText();
             WindowB windowB = new WindowB();
-            windowB.getFormB().getFio().setText(fio);
+            FormB formB = windowB.getFormB();
+            formB.getFio().setText(fio);
+            formB.getProgressBar1().setValue(fio.length());
             windowB.setVisible(true);
             this.dispose();
         }
