@@ -30,17 +30,25 @@ public class WindowA extends JFrame {
 
     public void switchToB (FormA formA) {
         if (formA.getSurname().getText().isEmpty() || formA.getName().getText().isEmpty()) {
-            JOptionPane.showConfirmDialog(formA.getRootPanel(),
+            JOptionPane.showMessageDialog(formA.getRootPanel(),
                     "Type Name and Surname, please",
                     "Warning",
-                    JOptionPane.OK_OPTION,
                     JOptionPane.WARNING_MESSAGE);
         } else if (formA.getSecondName().getText().isEmpty()){
-            JOptionPane.showConfirmDialog(formA.getRootPanel(),
+            int answer = JOptionPane.showConfirmDialog(formA.getRootPanel(),
                     "Second name is empty, do you want to continue?",
                     "Warning",
-                    JOptionPane.CANCEL_OPTION,
+                    JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE);
+            if (answer == JOptionPane.YES_OPTION) {
+                String fio = formA.getSurname().getText() +  " " +
+                        formA.getName().getText() + " " +
+                        formA.getSecondName().getText();
+                WindowB windowB = new WindowB();
+                windowB.getFormB().getFio().setText(fio);
+                windowB.setVisible(true);
+                this.dispose();
+            }
         } else {
             String fio = formA.getSurname().getText() +  " " +
                     formA.getName().getText() + " " +
