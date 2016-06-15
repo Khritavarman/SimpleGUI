@@ -19,8 +19,7 @@ public class WindowA extends JFrame {
         formA.getButtonAtoB().addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                dispose();
-                convertToA(formA);
+                switchToB(formA);
             }
         });
     }
@@ -29,12 +28,27 @@ public class WindowA extends JFrame {
         return formA;
     }
 
-    public static void convertToA (FormA formA) {
-        String fio = formA.getSurname().getText() +  " " +
-                formA.getName().getText() + " " +
-                formA.getSecondName().getText();
-        WindowB windowB = new WindowB();
-        windowB.getFormB().getFio().setText(fio);
-        windowB.setVisible(true);
+    public void switchToB (FormA formA) {
+        if (formA.getSurname().getText().isEmpty() || formA.getName().getText().isEmpty()) {
+            JOptionPane.showConfirmDialog(formA.getRootPanel(),
+                    "Type Name and Surname, please",
+                    "Warning",
+                    JOptionPane.OK_OPTION,
+                    JOptionPane.WARNING_MESSAGE);
+        } else if (formA.getSecondName().getText().isEmpty()){
+            JOptionPane.showConfirmDialog(formA.getRootPanel(),
+                    "Second name is empty, do you want to continue?",
+                    "Warning",
+                    JOptionPane.CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
+        } else {
+            String fio = formA.getSurname().getText() +  " " +
+                    formA.getName().getText() + " " +
+                    formA.getSecondName().getText();
+            WindowB windowB = new WindowB();
+            windowB.getFormB().getFio().setText(fio);
+            windowB.setVisible(true);
+            this.dispose();
+        }
     }
 }
