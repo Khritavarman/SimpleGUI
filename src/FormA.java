@@ -12,15 +12,6 @@ public class FormA {
     private JTextField name;
     private JTextField secondName;
 
-    public FormA() {
-        buttonAtoB.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-        });
-    }
-
     public JTextField getSurname() {
         return surname;
     }

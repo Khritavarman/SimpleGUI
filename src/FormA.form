@@ -13,13 +13,13 @@
           <preferredSize width="500" height="24"/>
         </properties>
       </component>
-      <component id="4bcf5" class="javax.swing.JTextField" binding="name">
+      <component id="cf024" class="javax.swing.JTextField" binding="name">
         <constraints/>
         <properties>
           <preferredSize width="500" height="24"/>
         </properties>
       </component>
-      <component id="ce308" class="javax.swing.JTextField" binding="secondName">
+      <component id="dd2d0" class="javax.swing.JTextField" binding="secondName">
         <constraints/>
         <properties>
           <preferredSize width="500" height="24"/>

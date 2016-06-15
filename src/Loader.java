@@ -3,6 +3,7 @@
  */
 public class Loader {
     public static void main(String[] args) {
-        new WindowA();
+        WindowA windowA = new WindowA();
+        windowA.setVisible(true);
     }
 }
