@@ -19,7 +19,6 @@ public class WindowB extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                dispose();
                 switchToA(formB);
             }
         });
@@ -41,7 +40,7 @@ public class WindowB extends JFrame {
         return formB;
     }
 
-    public static void switchToA (FormB formB) {
+    public void switchToA (FormB formB) {
         String[] text = formB.getFio().getText().trim().split("[\\s]+");
         WindowA windowA = new WindowA();
         FormA formA = windowA.getFormA();
@@ -53,5 +52,34 @@ public class WindowB extends JFrame {
             e1.printStackTrace();
         }
         windowA.setVisible(true);
+        dispose();
     }
+
+
+
+    /*      windowA.setFocusable(true);
+        formA.getRootPanel().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if (e.isControlDown()){
+                    if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                        formA.getSwitch1to2Button().doClick();
+                    }
+                }
+            }
+        });
+
+        windowB.setFocusable(true);
+        formB.getRootPanel().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if (e.isControlDown()){
+                    if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                        formB.getSwitch2to1Button().doClick();
+                    }
+                }
+            }
+        });*/
 }
