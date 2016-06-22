@@ -1,6 +1,5 @@
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 /**
  * Created by Kostyan on 14.06.2016.
@@ -21,16 +20,28 @@ public class WindowB extends JFrame {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 dispose();
-                convertToA(formB);
+                switchToA(formB);
             }
         });
+
+        Action act = new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                switchToA(formB);
+            }
+        };
+
+        KeyStroke key = KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, InputEvent.CTRL_MASK);
+        formB.getButtonBtoA().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(key, "act");
+        formB.getButtonBtoA().getActionMap().put("act", act);
     }
 
     public FormB getFormB() {
         return formB;
     }
 
-    public static void convertToA (FormB formB) {
+    public static void switchToA (FormB formB) {
         String[] text = formB.getFio().getText().trim().split("[\\s]+");
         WindowA windowA = new WindowA();
         FormA formA = windowA.getFormA();
