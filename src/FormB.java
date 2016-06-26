@@ -19,7 +19,6 @@ public class FormB {
             public void keyTyped(KeyEvent e) {
                 super.keyReleased(e);
                 progressBar1.setValue(fio.getText().length());
-                System.out.println(fio.getText().length());
             }
         });
     }
